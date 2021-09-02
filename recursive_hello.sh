@@ -6,7 +6,7 @@ print_char(){
   if [ $(($c + 1)) -eq ${#MSG[@]} ];then
     echo ""
   else
-    print_char $(($c + 1)) ${MSG[@]}
+    print_char $(($c + 1))
   fi
 }
 print_char 0
