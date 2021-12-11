@@ -1,4 +1,9 @@
 #!/bin/bash
+if ! command -v bc &> /dev/null
+then
+    echo "bc could not be found, please install it and re run this script."
+    exit
+fi;
 SCALE=$1
 VALUE=2
 PI=0
