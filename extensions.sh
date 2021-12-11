@@ -40,4 +40,9 @@ do
         mkdir $i
         mv *.$i $i/
 done
-ls -R
+if ! command -v tree &> /dev/null
+then
+    ls -R
+    exit
+fi
+tree

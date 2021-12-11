@@ -1,10 +1,11 @@
 #!/bin/bash
+FOLDERNAME="files"
 array=(a b c d e f g h i j k l m n o p q r s t u v w x y z)
 n=$(($RANDOM%5))
 length=${#array[*]}
-rm -rf archivos
-mkdir archivos
-cd archivos
+rm -rf $FOLDERNAME
+mkdir $FOLDERNAME
+cd $FOLDERNAME
 for ((i=0; i<10; i++))
 do
         ext=" "
@@ -23,5 +24,5 @@ do
         j=$(($j+1))
         touch file$j.$i
 done
-echo "Generando archivos..."
+echo "Generating random files..."
 sleep 2
