@@ -1,12 +1,15 @@
 #!/bin/bash
 print_char(){
-  MSG=("H" "E" "L" "L" "O" "_" "W" "O" "R" "L" "D")
+  MSG=$2
+  len=`echo $MSG |awk '{print length}'`
   c=$1
-  echo -n  ${MSG[$c]}
-  if [ $(($c + 1)) -eq ${#MSG[@]} ];then
+  echo -n  ${MSG:${c}:1}
+  if [ $(($c + 1)) -eq $len ];then
     echo ""
   else
-    print_char $(($c + 1))
+    print_char $(($c + 1)) $MSG
   fi
 }
-print_char 0
+
+greeting="Hello,World"
+print_char 0 $greeting
